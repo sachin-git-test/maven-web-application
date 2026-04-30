@@ -1,0 +1,12 @@
+services:
+  maven-app:
+    container_name: maven-app-container # name conflict for mult-container
+    build: .
+    image: mavenwebappimage
+    ports:
+      - "8080:8080"
+    networks:
+      - mavenNetwork
+
+networks:
+  mavenNetwork: #driver: local
